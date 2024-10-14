@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: librespeed-headers
+  namespace: final
+  labels:
+    app.kubernetes.io/instance: librespeed
+data:
+  X-Forwarded-For: "$proxy_add_x_forwarded_for"
+  X-Real-IP: "$remote_addr"
